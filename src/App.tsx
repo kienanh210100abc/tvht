@@ -1,26 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Sidebar from "./component/Sidebar";
+import MobileHeader from "./component/MobileHeader";
+import MediaViewer from "./component/MediaViewer";
+import { categories } from "./data/photo";
 
-function App() {
+const App: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState(categories[0].id);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleCategorySelect = (categoryId: string) => {
+    setSelectedCategory(categoryId);
+    setMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const currentCategory =
+    categories.find((cat: { id: any }) => cat.id === selectedCategory) ||
+    categories[0];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="mobile-header">
+        <MobileHeader
+          categories={categories}
+          selectedCategory={selectedCategory}
+          onCategorySelect={handleCategorySelect}
+          menuOpen={menuOpen}
+          toggleMenu={toggleMenu}
+        />
+      </div>
+      <div className="desktop-layout">
+        <Sidebar
+          categories={categories}
+          selectedCategory={selectedCategory}
+          onCategorySelect={handleCategorySelect}
+        />
+        <main className="content">
+          <MediaViewer
+            mediaItems={currentCategory.media}
+            categoryName={currentCategory.name}
+          />
+        </main>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

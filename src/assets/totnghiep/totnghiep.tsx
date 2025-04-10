@@ -1,0 +1,9 @@
+// Trong file index.ts của thư mục assets/totnghiep
+export { default as totnghiep1 } from "./totnghiep1.JPG";
+export { default as totnghiep2 } from "./totnghiep2.JPG";
+export { default as totnghiep3 } from "./totnghiep3.JPG";
+export { default as totnghiep4 } from "./totnghiep4.JPG";
+export { default as totnghiep5 } from "./totnghiep5.jpg";
+export { default as totnghiep6 } from "./totnghiep6.jpg";
+export { default as totnghiep7 } from "./totnghiep7.jpg";
+export { default as totnghiep8 } from "./totnghiep8.JPG";

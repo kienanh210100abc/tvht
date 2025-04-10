@@ -1,0 +1,9 @@
+// Trong file index.ts của thư mục assets/coto
+export { default as coto1 } from './coto1.jpg';
+export { default as coto2 } from './coto2.jpg';
+export { default as coto3 } from './coto3.jpg';
+export { default as coto4 } from './coto4.jpg';
+export { default as coto5 } from './coto5.jpg';
+export { default as coto6 } from './coto6.jpg';
+export { default as coto7 } from './coto7.jpg';
+export { default as coto8 } from './coto8.jpg';
