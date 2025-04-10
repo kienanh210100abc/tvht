@@ -102,7 +102,7 @@ export const categories: Category[] = [
         id: 2,
         type: "image",
         src: hanoi.hanoi2,
-        alt: "Ong thấy hoa đẹp thì đến, nhưng hoa sợ ong",
+        alt: "Chinh gái thế nhò",
       },
       {
         id: 3,
